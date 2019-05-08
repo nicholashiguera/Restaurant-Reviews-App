@@ -2,8 +2,13 @@
 <html>
 
 <head>
-    <script src='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v0.54.0/mapbox-gl.css' rel='stylesheet' />
+
   <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
@@ -19,15 +24,15 @@
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" aria-label="A map that displays locations of restaurants"></div>
     </section>
     <section>
       <div class="filter-options">
-        <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <h2 tabindex="0" aria-label="Filter restaurants based on neighborhood or cuisine">Filter Results</h2>
+        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-label="Please select a neighborhood from the dropdown">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" aria-label="Please select a cuisine from the dropdown">
           <option value="all">All Cuisines</option>
         </select>
       </div>
