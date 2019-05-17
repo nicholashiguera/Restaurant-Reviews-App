@@ -8,17 +8,18 @@ var markers = []
  * Register the service worker script for offline experience
  * credits: https://developers.google.com/web/fundamentals/primers/service-workers/
  */
-registerServiceWorker = () => {
-  if ('serviceWorker' in navigator) {
+if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/serviceWorker.js').then(function(registration) {
+      // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
     }, function(err) {
+      // registration failed :(
       console.log('ServiceWorker registration failed: ', err);
     });
   });
-  }
 }
+
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
