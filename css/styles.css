@@ -68,12 +68,11 @@ nav h1 a {
   font-family: 'Baloo Bhai', cursive;
 }
 #breadcrumb {
-  padding: 10px 40px 16px;
+  padding: 7px 40px 1px;
   list-style: none;
   background-color: #eee;
   font-size: 17px;
   margin: 0;
-  width: calc(50% - 80px);
 }
 
 /* Display list items side by side */
@@ -198,7 +197,7 @@ nav h1 a {
   z-index: 1000;
 }
 .inside #map-container {
-  background: blue none repeat scroll 0 0;
+  background: blue none repeat scroll 0 0;  
   height: 87%;
   position: fixed;
   right: 0;
@@ -209,6 +208,8 @@ nav h1 a {
   background-color: #ccc;
   height: 100%;
   width: 100%;
+  position: relative;
+  z-index: 0;
 }
 .inside #footer {
     bottom: 0;
@@ -247,11 +248,12 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
+  padding: 100px 25px 30px;
   width: 50%;
+  max-width: 100%;
 }
 #reviews-container {
-  padding: 30px 40px 80px;
+  padding: 30px 30px 80px;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -282,11 +284,39 @@ nav h1 a {
   color: #666;
 }
 
-
+@media only screen and (max-width: 1000px) {
+  #reviews-list {
+    width: 90%;
+}
+}
 @media only screen and (max-width: 550px) {
   nav {
     height: 80px;
   }
+  .inside #map-container {
+    height: 70vh;
+    position: absolute;
+    top: 130px;
+    width: 100%;
+  }
+
+  .inside #map {
+    position: relative;
+    z-index: 0;
+  }
+  #restaurant-container {
+    padding: 540px 25px 30px;
+  }
+
+  #restaurant-container, #reviews-container {
+    width: 100%;
+  }
+
+  .inside #footer {
+    width: 100%;
+  }
+
+
 }
 
 @media only screen and (max-width: 400px) {
